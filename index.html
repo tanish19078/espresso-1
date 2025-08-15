@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espresso Sequencer: Queue Master</title>
+  <meta name="description" content="A quick, event-friendly browser game inspired by Espresso Systems." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <img src="assets/logo_new.jpg" alt="Espresso Sequencer logo" class="logo"/>
+        <div class="titles">
+          <h1>Espresso Sequencer</h1>
+          <p class="subtitle">Queue&nbsp;Master</p>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="timer">⏱ <span id="time">90</span>s</div>
+        <div class="score">⭐ <span id="score">0</span></div>
+        <div class="fair">⚖️ Fairness: <span id="fair">100%</span></div>
+        <div class="risk">📉 Risk: <span id="risk">0%</span></div>
+      </div>
+    </header>
+    <div class="audio-control"><button id="mute">🔊 Mute</button></div>
+
+    <main>
+      <canvas id="game" width="1100" height="600"></canvas>
+      <aside class="panel">
+        <h3>How to play</h3>
+        <ul>
+          <li>Orders (beans) arrive across 3 rollups (lanes).</li>
+          <li>Process orders in the <b>global arrival order</b>.</li>
+          <li><b>Next Required ID</b>: <span id="nextReq">1</span></li>
+          <li>Press <b>A / S / D</b> to serve from Lane <b>1 / 2 / 3</b>.</li>
+          <li><b>Space</b>: Activate <b>Shared Sequencer</b> (auto-correct for 5s).</li>
+          <li><b>Private</b> orders (🔒) are safe to serve anytime during power-up.</li>
+          <li><b>Bribes</b> (💰) tempt you to go out-of-order. Do it and Risk ↑.</li>
+          <li>Score = Throughput × Fairness bonus. Keep Risk low!</li>
+        </ul>
+
+        <div class="cta">
+          <button id="start">Start / Restart</button>
+          <button id="pause">Pause</button>
+        </div>
+
+        <div class="share">
+          <p>Post a preview on X with the image in <code>/assets/x-preview.png</code> and tag <b>#EspressoGame</b>.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <p>Made with ☕ for the Espresso community. Local, offline, no data collection.</p>
+    </footer>
+  </div>
+
+  
+  <audio id="bgm" src="assets/audio/bgm_loop.wav" loop preload="auto"></audio>
+  <audio id="sfx_start" src="assets/audio/start.wav" preload="auto"></audio>
+  <audio id="sfx_win" src="assets/audio/win.wav" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

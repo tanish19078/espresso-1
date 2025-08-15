@@ -1,0 +1,60 @@
+*{box-sizing:border-box}
+:root{
+  --bg:#0b0c0e; --panel:#14161a; --ink:#e6e8eb; --muted:#9aa3ad;
+  --accent:#c47a3d; /* espresso crema */
+  --lane1:#5b8ef1; --lane2:#6dd3a0; --lane3:#f2c94c;
+  --risk:#ff6b6b;
+}
+html,body{height:100%;margin:0;background:radial-gradient(1200px 700px at 30% -10%, #1b1e24 0%, #0b0c0e 60%);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial}
+.wrap{max-width:1280px;margin:0 auto;padding:16px 20px 40px}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:linear-gradient(180deg,#15181d, #0f1115);border:1px solid #1f232b;border-radius:12px;margin-bottom:14px;backdrop-filter: blur(8px)}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:48px;height:48px}
+.titles h1{margin:0;font-size:20px;letter-spacing:.3px}
+.subtitle{margin:0;color:var(--muted);font-weight:600;letter-spacing:.4px}
+.meta{display:flex;gap:14px;font-weight:600}
+main{display:grid;grid-template-columns: 1fr 320px;gap:14px}
+#game{width:100%;background:linear-gradient(180deg,#0f1217,#0b0c0e);border:1px solid #1f232b;border-radius:14px}
+.panel{background:var(--panel);border:1px solid #1f232b;border-radius:14px;padding:14px;position:relative}
+.panel h3{margin-top:2px}
+.panel ul{margin:6px 0 0 18px;line-height:1.5;color:var(--muted)}
+.cta{display:flex;gap:8px;margin:12px 0}
+button{appearance:none;border:none;background:var(--accent);color:#22170f;padding:10px 12px;border-radius:10px;font-weight:800;cursor:pointer}
+button#pause{background:#2a2f38;color:var(--ink);}
+.footer{color:var(--muted);text-align:center;margin-top:14px;font-size:13px}
+.share{font-size:12px;color:var(--muted)}
+@media (max-width: 980px){
+  main{grid-template-columns:1fr}
+  .panel{order:-1}
+}
+
+
+
+/* Responsive canvas */
+#game{width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+
+/* Casino theme */
+:root{
+  --casino-bg:#1a0f0f;
+  --casino-panel:#271212;
+  --neon:#ffd166;
+  --neon2:#06d6a0;
+  --neon3:#ef476f;
+}
+body{background:radial-gradient(1200px 800px at 50% -10%, #3b1d0f 0%, #0e0a09 70%)}
+.topbar, .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(8px)}
+.logo{border-radius:12px;box-shadow:0 0 0 3px rgba(255,255,255,.06), 0 6px 18px rgba(0,0,0,.4)}
+.button, button{border-radius:999px;padding:10px 16px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg,#222,#111);box-shadow:inset 0 1px 0 rgba(255,255,255,.1), 0 6px 14px rgba(0,0,0,.4)}
+.button:hover, button:hover{transform:translateY(-1px)}
+.audio-control{display:flex;justify-content:flex-end; padding:6px 12px}
+.muted.small{font-size:12px;opacity:.8}
+.field{margin:8px 0;display:flex;flex-direction:column;gap:6px}
+.field.row{flex-direction:row;align-items:center;gap:8px}
+select,input{padding:8px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#111;color:#eee}
+/* Neon lanes feel drawn by canvas, but we also tint sidebar */
+.side h3{color:var(--neon)}
+
+/* Ensure Start/Pause buttons are visibly styled */
+#start{ background:linear-gradient(180deg,#e9b36b,#c47a3d); color:#111; font-weight:800; }
+#pause{ background:#2a2f38; color:#eee; }
+.cta button{ min-width:140px; }
